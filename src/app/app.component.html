@@ -6,8 +6,19 @@
   <hr>
   <div class="row">
     <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">First Change</button>
       <app-server-element *ngFor="let serverElement of serverElements"
-      [srvElement]="serverElement"></app-server-element>
+      [srvElement]="serverElement"
+      [name]="serverElement.name"></app-server-element>
+
+
+
+      <!-- This portion was added to show how to use a content hook. Erase the bottom portion and take out the ng-content hook from the server file to fix. -->
+      <!-- <p>
+        <strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
+        <em *ngIf="serverElement.type === 'blueprint'" style="color: blue">{{ serverElement.content }}</em>
+      </p> -->
+
     </div>
   </div>
 </div>
